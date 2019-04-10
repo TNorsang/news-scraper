@@ -32,7 +32,7 @@ mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true 
 
 // A GET route for scraping the website
 app.get("/scrape", function(req, res) {
-  // First, we grab the body of the html with axios
+  // had to use echojs because i had issues with wikipedia
   axios.get("http://www.echojs.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
