@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Scraping With Mongoose</title>
+  <title>Wiki Scraper</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -14,17 +14,16 @@
   <div class = "container">
   <nav class="navbar navbar-dark bg-dark">
 
-    <form class="form-inline">
-      <a class="navbar-brand">WIKIPEDIA ARTICLE</a>
+    <form class="form">
+      <a class="navbar-brand" id="title">WIKIPEDIA ARTICLE</a>
 
 
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Start Scraping </button>
+      <button class="btn btn-outline-success my-2 my-sm-0" id="button" type="submit"> Start Scraping </button>
     </form>
 
   </nav>
   <div id="wrapper">
-    <h1>Note Scraper</h1>
-    <h2><i>If you can do this...the homework should be no problem.</i></h2>
+    <h1></h1>
     <div id="articles"></div>
     <div id="notes"></div>
   </div>

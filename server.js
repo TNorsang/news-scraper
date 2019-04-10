@@ -1,27 +1,25 @@
-// dependencies
+// Dependencies : express/logger/mongoose
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
+// Scraping NPM packages
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// Require all models
+// db connecting it to models
 var db = require("./models");
 
+// The server port used for express
 var PORT = 3003;
 
 // Initialize Express
 var app = express();
 
 // Configure middleware
-
-// Use morgan logger for logging requests
+// morgan
 app.use(logger("dev"));
-// Parse request body as JSON
+// data into JSON (aka javascript oriented object), basically turning texts into objects
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
@@ -35,7 +33,7 @@ mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true 
 // A GET route for scraping the website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://en.wikipedia.org/wiki/Portal:Contents").then(function(response) {
+  axios.get("http://www.echojs.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
     console.log(response.data);
